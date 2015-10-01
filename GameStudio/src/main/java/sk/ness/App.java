@@ -1,28 +1,33 @@
+package sk.ness;
+
 import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Spustac {
+import sk.ness.minesweeper.Minesweeper;
+import sk.ness.puzzle.Game;
+
+public class App {
 
 	public static void main(String[] args) {
 		
         System.out.println("Zadajte svoju volbu : ");
 		System.out.println("1) miny");
-		System.out.println("2) kamene");
+		System.out.println("2) puzzle");
 		System.out.println("3) guessNumber");
 		Scanner sc = new Scanner(System.in);
 		sc.useLocale(Locale.US);
 		int volba = sc.nextInt();
 		switch (volba) {
 		case 1:
-			System.out.println("Zadali ste 1");
+			Minesweeper.spusti();
 			break;
 		case 2:
-			System.out.println("Zadali ste 2");
+			Game.game();
 			break;
 		case 3:
-			Spustac s = new Spustac();
-			s.guessNumber();
+			App app = new App();
+			app.guessNumber();
 			break;
 		}
 	}
